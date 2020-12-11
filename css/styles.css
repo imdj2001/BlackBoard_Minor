@@ -1,0 +1,165 @@
+@charset "UTF-8"; 
+/* CSS Document */ 
+  
+* { margin:0; padding:0; } 
+  
+body { 
+  background:url(../images/bg.gif) repeat-x #f8f8f8; 
+  color:#d7d7d7; 
+  font-family:"Belle","Comic Sans MS", cursive; 
+  font-size:25px; 
+  line-height:27px;} 
+  
+   /* It is a whiteboard used for meeting and the teachers. */
+#coveroverit { 
+  position:relative; 
+  width:960px; 
+  margin:0 auto; 
+  padding-top:75px;} 
+  
+/*Elements of the whiteboard  */
+  #intrectivewhiteposition { 
+  /*background-image:url(../images/blackboard.jpg) no-repeat; */
+  width:924px; 
+  height:599px; 
+  margin:0 auto; 
+  padding:14px 0 75px 14px; 
+  cursor:crosshair; 
+}
+/*It is used for the sketch purpose */
+#beautifulsketch { 
+ position:absolute; 
+ border:none; 
+ color:#FFF; 
+ overflow:hidden; 
+ background-color:transparent; 
+ } 
+ /*It is the different board */
+#differentsketch { position: absolute; width:897px; height:560px; overflow:hidden; }
+.noscript { padding:50px 30px 0 40px; width:820px; }
+/*Choices of different color*/ 
+#choiceelection { 
+ position:absolute; 
+ z-index:99999; 
+ margin-top:-30px; 
+ } 
+select { 
+ font-family:Verdana, Geneva, sans-serif; 
+ font-size:12px; 
+ background-color:#EAEAEA; 
+ }
+ /*shades of different color marker*/
+ /*color shade 1 */
+ #shadecolorredswitch { cursor:pointer; position:absolute; z-index:99999; top:620px; left:198px; } 
+ /*color shade 2 */
+/*#shadecolorgreenswitch { cursor:pointer; position:absolute; z-index:99999; top:620px; left:400px; } 
+*//*color shade 3 */
+#shadecolorblueswitch { cursor:pointer; position:absolute; z-index:99999; top:620px; left:325px; } 
+/*color shade 4*/
+#shadecoloryellowswitch { cursor:pointer; position:absolute; z-index:99999; top:620px; left:283px; } 
+/*color shade 5*/
+#shadecolororangeswitch { cursor:pointer; position:absolute; z-index:99999; top:620px; left:240px; } 
+/*color shade 6 */
+/*#shadecolorpinkswitch { cursor:pointer; position:absolute; z-index:99999; top:620px; left:560px; } */
+/*color shade 7 */
+/*#shadecolorwhiteswitch { cursor:pointer; position:absolute; z-index:99999; top:620px; left:80px; } 
+*//* It is used to delete the written things in the board */
+#deletefunction { 
+ position:absolute; 
+ /*background:url(../images/eraser.png) no-repeat; */
+ left:834px; 
+ top: 580px; 
+  
+ z-index:99999; 
+ cursor:pointer; 
+ }
+ /*minussignlogo is used  for the decrement of the size of the marker*/
+ #minussignlogo { 
+ position:absolute; 
+ top:620px; 
+ left:119px; 
+ /*margin-left: 15px;*/
+ z-index:999999; 
+ cursor:pointer; 
+ } 
+  /*largesignlogo is used  for the increment of the size of the marker*/
+#largesignlogo { 
+   position:absolute; 
+   top:620px; 
+   left:159px; 
+   /*margin-left: 10px;*/
+   z-index:999999; 
+   cursor:pointer; 
+   } 
+   /*differentlinessize is one of the feature used for different shaped lines in a the project*/
+#differentlinessize { 
+ background:url(../images/stroke-style.png) no-repeat; 
+ width:43px; 
+ height:153px; 
+ position:absolute; 
+ top:449px; 
+ /*left:22px;*/
+ right: 81px; 
+ z-index:1; 
+ padding:8px 0 0 7px; 
+ } 
+.stroke { cursor:pointer; margin-bottom:3px; }
+/*keepcoveroverit is the feature provided in the project in the view to save the white board*/
+#keepcoveroverit { position:absolute; top:100px; right: 0px;} 
+#saveimagebutton { 
+   float:right; 
+   margin-right:345px; 
+   margin-top:0px; 
+   position:relative; 
+   z-index:9999; 
+   cursor:pointer; 
+   overflow:hidden; 
+   } 
+   /* wordssave is use to save whatever is written in the board  */
+#wordssave { 
+ display:none; 
+ position:absolute; 
+ font-family:Verdana, Geneva, sans-serif; 
+ color:#000; 
+ font-size:10px; 
+ float:right; 
+ margin-top:-10px; 
+ right:91px; 
+ width:250px; 
+ overflow:hidden; 
+ }
+ /*
+ #colorTable { 
+ width:231px; 
+ height:132px; 
+ position:absolute; 
+ margin-top:8px; 
+ z-index:999999; 
+ right:80px; 
+ background-color: #000000; 
+ display:none; 
+ cursor:pointer; 
+ } 
+.color { 
+   position:relative; 
+   height:7px; 
+   width:7px; 
+   float:left; 
+   padding:1px; 
+   margin:1px; 
+   } 
+.color:hover{ border:solid 1px #FFF; margin:0px; }
+/*clearbutton is used to delete the whole board and start from the beginning*/
+#clearbutton {
+  position:absolute; 
+  cursor:pointer; 
+  margin-top:-664px; 
+  right:100px; }
+.tooltip{ 
+ position: absolute; 
+ top: 0; 
+ left: 0; 
+ z-index: 3; 
+ display: none; 
+ background-color:#F00; 
+ }

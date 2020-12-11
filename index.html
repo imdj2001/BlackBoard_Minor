@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+  <html xmlns="http://www.w3.org/1999/xhtml"> 
+  
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+
+<!-- CSS documents externally imported from cdnjs for placing text on hovering increasing and decreasing text stroke symbols
+and other symbols as well. We can see save image on hovering save symbol and clear canvas on hovering clear or delete icon .
+     We have added tipsy library for doing the same work as mentioned above.  -->
+
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.3/jquery.tipsy.css" integrity="sha512-RfUmB1K26HPVMIfhrpbPNsLMCajuf7/CXZ67FWWfBMkaZrEtF2vDoXdnEuPkhup7lE2n5Pseel7hH5e51aJHIg==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.3/jquery.tipsy.min.css" integrity="sha512-/zSPS6D82d+9WmRQnjwAK1Aj2VWk0bzkIjF2q4bt3fpBkLfbsA4xajbOEpFF0bmpyYyIK84phL0FgoI1ReeSbg==" crossorigin="anonymous" />
+
+<title>Collaborative Black board used for teaching and meeting purpose some tools and techniques for online learning which can ensure the continuity of learning are highlighted</title> 
+  
+
+
+<!-- Imported many javascript files from Cdnjs.cloudfare.com for all purposes of saving,and imported tipsy js for popping up of text on hovering of any of the button such as increasing stroke,decreasing stroke, and Other options such as save image, clear canvas and all things.and imported our canvas.js in which all the functions are running on background from JS folder. -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.3/jquery.tipsy.min.js" integrity="sha512-eVZ32+tSCynyovm4XjueCZMl/S4bDZeOlo26LqkHplwQ99NPMG6Q37WED09zlsDa0cB4C2D1M8a34RlmnOTMBQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.1.0/base64.min.js" integrity="sha512-gysqkfMGKYvQSEPi68aIzL4ffmrQ0I6azOoPJ+ocle8k1bblsHJh7QVVoy4HHQG2iPzvFmRbs81d8kkVSyCkjA==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.1.0/base64.js" integrity="sha512-S1ZwdmlDDaFLXAWsXRXKnbkNNpmlWFlp5QEsJeiUQnzeLpzp1vxJyMdpCSAgEoAJY21LpQfCyYQ+z+W+1F84Kw==" crossorigin="anonymous"></script>
+<script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.3/jquery.tipsy.js" integrity="sha512-Q92ZcA/6+mmIu99iIB9GcKa+a/hBLraT3Q5YgpB3VRWZmLs1Q/uG9NnDDIqaPiYdRgvaJVNjj0ZWUBvzhRNX0w==" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/canvas.js"> </script> 
+
+  <script type='text/javascript'> 
+ $(function() { 
+ $('#clearbutton').tipsy({gravity: 's'}); 
+ $('#color').tipsy({gravity: 's'}); 
+ $('#saveimagebutton').tipsy({gravity: 's'}); 
+ $('#resetbtn').tipsy({gravity: 's'}); 
+ $('#minussignlogo').tipsy({gravity: 's'}); 
+ $('#largesignlogo').tipsy({gravity: 's'});  }); 
+ </script>
+  
+</head> 
+
+<!-- Body starts from Here and all HTML tags are here mentioned with a css title in it.
+     All div tags are inside body. -->
+
+
+<body> 
+  
+  <!-- Our canvas starts from here and coveroverit is its css title . It will contain all elements of blackboard as it will include all elements as chalk,line,triangle,rectangle,circle and all shades in blackboard. it will also contain rubber and save,delete canvas. -->
+  
+
+<div id="coveroverit"> 
+				
+  <!-- It is our Interactive White position . it will contain all elements except the save,clear canvas button because it will not a 
+  {part of blackboard elements as they are only outsider elements of blackboard which will help us to delete or save image which will not affect any part of whiteboard(specificallly)}  -->
+
+
+        <div id="intrectivewhiteposition"> 
+        	<p>
+        		<!-- These are tools selector option as it will create a dropdown of tools like Chalk,line,rectangle,circle,triangle aand default tool in this tools selector will be chalk as that will be our default tool of blackboard which wiill be off white ccolour by default. -->
+			<select name="selector" id="choiceelection"> 
+			<option value="chalk">Pen</option> 
+			<option value="line">Line</option> 
+			<option value="rect">Rectangle</option> 
+			<option value="circle">Circle</option>
+			<option value="triangle">Triangle</option>
+			
+			</select> 
+			</p>
+
+
+			<!-- Here, Canvas starts and we will print sorry message if your browser doesn't support the HTML5 Canvas.
+			and supported browser for canvas are as following : 1.Google chrome
+			                                                    2.Firefox
+			                                                    3.Opera
+			                                                    4.Safari
+			                                                    5.Konqueror  -->
+
+
+
+
+			<canvas id="beautifulsketch" height="560" width="897"> 
+			<p class="noscript">We are really sorry for inconvienence caused from our side. but your browser don't support canvas. <br />browser. Supported browsers: <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.opera.com">Opera</a>, <a href="http://www.mozilla.com">Firefox</a>, <a href="http://www.apple.com/safari">Safari</a>, <br />and <a href="http://www.konqueror.org">Konqueror</a>. Also make sure your JavaScript is enabled.</p> 
+			</canvas> 
+			
+
+
+			<!-- Canvas Tag ends here as it is only for showing sorry message and showing supported browsers. -->
+
+
+			<!-- There are div tags for each color chalk button and we have different colors like white,red,orange,green,blue and pink and we have added images from google to show that color in board. there will be specific height and width of board that is 71 and 17 respectively . and we will be using strokestyle function for choosing different colors for our chalk pieces. -->
+
+			<!-- White Colour chalk -->
+         <div id="differentlinessize">
+
+			 
+			<img src="https://plainbackground.com/plain1024/ffffff.png" width="71" height="17" onclick="context.strokeStyle = '#FFFFFF';" /> 
+			 <br>
+
+
+			<!-- Red colour chalk -->
+
+       
+
+			
+			<img src="https://4.imimg.com/data4/HG/DB/MY-3235685/ff0000-png-500x500.png" width="71" height="17" onclick="context.strokeStyle = '#F00000';" /> 
+			 <br>
+
+
+			<!-- orange colour chalk -->
+
+			 
+			<img src="https://i.pinimg.com/originals/d1/b8/05/d1b80529ebbaf0f5e3272ceda356ee5b.jpg" width="71" height="17" onclick="context.strokeStyle = '#ff9600';" /> 
+			 <br>
+
+
+
+			<!-- Yellow colour chalk -->
+
+			 
+			<img src="https://www.colorcombos.com/images/colors/FFF305.png" width="71" height="17" onclick="context.strokeStyle = '#fff600';" /> 
+			 <br>
+
+
+			<!-- Green colour chalk -->
+
+
+			 
+			<img src="https://5.imimg.com/data5/EX/GB/GW/SELLER-14848361/green-colour-500x500.png" width="71" height="17" onclick="context.strokeStyle = '#48ff00';" /> 
+			 
+
+			<!-- Blue colour chalk -->
+
+
+
+			 
+			<img src="https://www.schemecolor.com/wallpaper?i=6533&desktop" width="71" height="17" onclick="context.strokeStyle = '#001eff';" /> 
+			
+			<br>
+
+			<!-- Pink colour chalk -->
+
+
+
+			 
+			<img src="https://qph.fs.quoracdn.net/main-qimg-dd397d31e5f32af0e000f48698517c3d" width="71" height="17" onclick="context.strokeStyle = '#ff00d2';" /> 
+			
+
+			<!-- Eraser - WE've given same colour to eraser as of our board that is grey (code : #424242) and size will be fixed of eraser which will be of 22 size.  -->
+
+			
+        </div>
+
+        </div> 
+
+        <!-- Div Tag ends -->
+
+
+        <!-- this is section of toggling stroke weight as we've provided different sizes of 1,6,9,13 and we can touch them to increase size by 1 and decrease size by 1. We've also imported some images of same lines from google images.
+        We've used linewidth function for increasing size of lines. -->
+
+
+
+        <!-- Subtract button -->
+		        
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIC8ZLkazkjfwGB6Z2CvvdGCWXfSv8nXlIlw&usqp=CAU" width="30" height="35" id="minussignlogo" title="Decrease Stroke" onclick="context.lineWidth--;" /> 
+
+		<!-- Add button -->
+
+		<img src="https://www.pngfind.com/pngs/m/44-440511_plus-png-plus-sign-cartoon-png-transparent-png.png" width="30" height="35" id="largesignlogo" title="Increase Stroke" onclick="context.lineWidth++;" /> 
+
+		<!-- There are different sizes of lines : 1.1.0
+												  2.6.0
+												  3.9.0
+												  4.13.0 we have given the specific size of height and width as 35 and 37 respectively. -->
+
+
+		<div id="shadecolorredswitch">  
+
+			<!-- line of 1.0 size -->
+        
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWqo0Ya4xEbAhJ0i61oXZKuft96MseHnJ1Cg&usqp=CAU" alt="1.0" class="stroke" width="35" height="37" onclick="context.lineWidth = '1.0';" /> 
+        </div>
+			<!-- line of 6.0 size -->
+        <div id="shadecolororangeswitch"> 
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr-lrdp7CtLzYKbW11QW9dCXv6Rnm_KCIBFw&usqp=CAU" alt="6.0" class="stroke" width="35" height="37" onclick="context.lineWidth = '6.0';" /> 
+        </div>
+		<!-- line of 9.0 size -->
+
+		<div id="shadecoloryellowswitch"> 
+		<img src="https://icon2.cleanpng.com/20180203/eyw/kisspng-line-black-and-white-angle-point-bold-line-cliparts-5a75a3b3a38077.1258800115176590596697.jpg" alt="9.0" class="stroke" width="35" height="37" onclick="context.lineWidth = '9.0';" /> 
+	</div>
+		<!-- line of 13.0 size -->
+
+		<div id="shadecolorblueswitch"> 
+		<img src="https://mpng.subpng.com/20180203/sbq/kisspng-line-angle-black-and-white-point-bold-line-cliparts-5a75a3abe17233.9355956315176590519234.jpg" alt="13.0" class="stroke" width="35" height="37" onclick="context.lineWidth = '13.0';" /> 
+		</div>
+		<div id="deletefunction" >
+			<img src="images/eraser.png" width="80" height="60" onclick="context.strokeStyle = '#000000'; context.lineWidth = '22';" />
+				
+			</div>
+
+		<!-- div ends for stroke weight -->
+
+
+
+  <!-- This is ending for cover and we will have clear canvas button which will reload the whole page by using javascript:location.reload function and specific size of width and height is 32 , 32. -->
+
+
+<div id="clearbutton" title="Clear Canvas"> 
+<a href="javascript:location.reload(true)"> 
+<img src="images/delete.jpg" alt="Clear Canvas" width="32" height="32" /> 
+</a> 
+</div>
+     
+</div>
+
+
+
+		<!-- this is div tag of saving wrapper button and we've connected image from an online link . -->
+
+
+
+<div id="keepcoveroverit"> 
+<div id="save"> 
+<img src="https://www.iconarchive.com/download/i103415/paomedia/small-n-flat/floppy.ico" alt="Save Image" width="35" height="35" id="saveimagebutton" title="Save Image" /> 
+</div> 
+<div id="wordssave"> 
+ download 
+ <img src="images/cross.png" alt="Cancel" width="16" height="16" id="resetbtn" title="Continue Drawing" /> 
+</div> 
+
+</div>
+   <!-- body ends -->
+
+</body> 
+</html>
